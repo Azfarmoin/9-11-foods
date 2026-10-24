@@ -1,0 +1,124 @@
+/* Theme: enamel tiffin tin. Cobalt blue and marigold are complementary hues. */
+:root{
+  --ink:#14226b;      /* deep cobalt, text and rims */
+  --cobalt:#2340d6;   /* primary blue */
+  --sky:#e4e9ff;      /* pale cobalt tint */
+  --marigold:#ffb81c; /* complement, actions */
+  --butter:#fff0c4;   /* pale marigold tint */
+  --paper:#f5f7ff;
+  --card:#ffffff;
+  --mute:#4b5380;
+  --ok:#0b7a4b;
+  --err:#b3261e;
+  --rim:2px solid var(--ink);
+  --tin:4px 4px 0 var(--ink);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body),system-ui,sans-serif;font-size:16px;line-height:1.5}
+h1,h2,h3{font-family:var(--font-display),system-ui,sans-serif;line-height:1.1;margin:0;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px 120px}
+.mute{color:var(--mute);margin:0}
+
+/* Top bar */
+.top{background:var(--ink);color:#fff}
+.top .in{max-width:720px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display),sans-serif;font-weight:800;font-size:22px}
+.brand i{font-style:normal;width:34px;height:34px;border-radius:10px;background:var(--marigold);color:var(--ink);display:grid;place-items:center;font-size:18px}
+.top .hint{font-size:14px;color:#c9d2ff}
+
+/* Hero with a CSS tiffin tin */
+.hero{background:var(--ink);color:#fff;padding:8px 0 56px;position:relative}
+.hero .in{max-width:720px;margin:0 auto;padding:0 18px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+.hero h1{font-size:clamp(34px,8vw,52px);font-weight:800}
+.hero p{margin:12px 0 0;color:#c9d2ff;max-width:34ch}
+.tin{width:104px;position:relative;padding-top:26px}
+.tin::before{content:"";position:absolute;top:0;left:26px;width:52px;height:30px;border:5px solid var(--marigold);border-bottom:0;border-radius:30px 30px 0 0}
+.tin b{display:block;height:34px;border-radius:10px;border:2px solid #fff;margin-top:-2px}
+.tin b:nth-child(1){background:var(--marigold)}.tin b:nth-child(2){background:var(--cobalt)}.tin b:nth-child(3){background:var(--marigold)}
+.tin b{position:relative}.tin b::after{content:"";position:absolute;right:-7px;top:11px;width:10px;height:10px;border-radius:50%;background:#fff}
+.search{position:relative;max-width:720px;margin:-28px auto 0;padding:0 18px}
+.search form{display:flex;background:var(--card);border:var(--rim);border-radius:16px;box-shadow:var(--tin);overflow:hidden}
+.search input{flex:1;min-width:0;border:0;padding:15px 16px;background:none;font-size:16px}
+.search input:focus-visible{outline-offset:-3px}
+.search button{border:0;border-left:var(--rim);background:var(--marigold);padding:0 20px;font-weight:800;cursor:pointer}
+.search button:hover{background:#ffc843}
+
+/* Cuisine filter */
+.chips{display:flex;gap:8px;overflow-x:auto;padding:22px 0 6px;scrollbar-width:none}
+.chip{flex:none;padding:8px 14px;border-radius:999px;border:var(--rim);background:var(--card);font-weight:700;font-size:14px}
+.chip[aria-current="true"]{background:var(--ink);color:var(--marigold)}
+.sec{display:flex;justify-content:space-between;align-items:baseline;margin:20px 0 4px}
+.sec h2{font-size:24px}
+
+/* Restaurant cards, each like a tin lid */
+.rcard{display:block;margin:16px 0;border:var(--rim);border-radius:18px;background:var(--card);box-shadow:var(--tin);overflow:hidden;transition:transform .12s,box-shadow .12s}
+.rcard:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.rcard:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+.lid{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:var(--rim);background:var(--sky)}
+.rcard:nth-of-type(even) .lid{background:var(--butter)}
+.lid .em{font-size:44px;line-height:1}
+.rate{display:inline-flex;align-items:center;gap:4px;background:var(--ink);color:var(--marigold);font-weight:800;border-radius:999px;padding:3px 11px;font-size:14px}
+.rbody{padding:14px 18px 16px}
+.rbody h3{font-size:21px;font-weight:800}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.pill{font-size:13px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--sky);color:var(--ink)}
+.pill.free{background:var(--marigold)}
+
+/* Restaurant page */
+.back{display:inline-flex;align-items:center;gap:6px;margin:18px 0 6px;font-weight:700;color:var(--cobalt)}
+.banner{display:flex;gap:16px;align-items:center;border:var(--rim);border-radius:18px;background:var(--butter);box-shadow:var(--tin);padding:16px 18px;margin:8px 0 8px}
+.banner .em{font-size:56px;line-height:1}
+.banner h1{font-size:30px;font-weight:800}
+.cat{font-size:20px;font-weight:800;margin:26px 0 4px;display:flex;align-items:center;gap:10px}
+.cat::after{content:"";flex:1;border-top:2px dashed var(--ink);opacity:.25}
+
+/* Food rows */
+.item{display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:2px dashed rgba(20,34,107,.18)}
+.dish{flex:none;width:68px;height:68px;border-radius:50%;border:var(--rim);background:var(--sky);display:grid;place-items:center;font-size:34px}
+.item:nth-child(even) .dish{background:var(--butter)}
+.grow{flex:1;min-width:0}
+.grow b{font-size:17px}
+.grow p{margin:2px 0 4px;color:var(--mute);font-size:14px}
+.price{font-weight:800;font-family:var(--font-display),sans-serif}
+.add{border:var(--rim);background:var(--marigold);border-radius:999px;padding:8px 18px;font-weight:800;cursor:pointer;box-shadow:2px 2px 0 var(--ink)}
+.add:active{transform:translate(2px,2px);box-shadow:none}
+.qty{display:flex;align-items:center;border:var(--rim);border-radius:999px;background:var(--card);overflow:hidden}
+.qty button{width:38px;height:36px;border:0;background:none;font-size:20px;font-weight:800;cursor:pointer}
+.qty button:hover{background:var(--butter)}
+.qty span{min-width:26px;text-align:center;font-weight:800;animation:pop .18s}
+@keyframes pop{from{transform:scale(1.4)}to{transform:scale(1)}}
+
+/* Cart bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:12px;max-width:684px;margin:0 auto 16px;margin-bottom:calc(16px + env(safe-area-inset-bottom,0px));width:calc(100% - 36px);padding:14px 20px;background:var(--ink);color:#fff;border-radius:16px;border:2px solid var(--marigold);box-shadow:0 8px 0 rgba(20,34,107,.25);font-weight:800}
+.bar .n{background:var(--marigold);color:var(--ink);border-radius:999px;padding:1px 10px;margin-right:8px}
+.bar .t{color:var(--marigold);font-family:var(--font-display),sans-serif;font-size:18px}
+
+/* Checkout */
+.panel{border:var(--rim);border-radius:18px;background:var(--card);padding:16px 18px;margin:16px 0;box-shadow:var(--tin)}
+.panel h2{font-size:20px;margin-bottom:8px}
+.line{display:flex;justify-content:space-between;padding:4px 0}
+.line.tot{border-top:2px dashed var(--ink);margin-top:8px;padding-top:12px;font-size:20px;font-weight:800;font-family:var(--font-display),sans-serif}
+label.fld{display:block;font-weight:700;margin-bottom:6px}
+.inp{width:100%;padding:13px 14px;border:var(--rim);border-radius:12px;background:var(--paper);font-size:16px}
+.pay{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.pay label{border:var(--rim);border-radius:12px;padding:12px 6px;text-align:center;font-weight:700;cursor:pointer;background:var(--paper)}
+.pay input{position:absolute;opacity:0}
+.pay label:has(input:checked){background:var(--marigold)}
+.pay label:has(input:focus-visible){outline:3px solid var(--cobalt);outline-offset:2px}
+.btn{width:100%;border:var(--rim);background:var(--marigold);border-radius:14px;padding:16px;font-size:17px;font-weight:800;cursor:pointer;box-shadow:var(--tin)}
+.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+.btn:disabled{opacity:.6;cursor:wait}
+.err{color:var(--err);font-weight:700;margin:10px 0}
+.empty{text-align:center;padding:48px 16px}
+.empty .em{font-size:60px}
+.empty h2{font-size:24px;margin:8px 0}
+.empty a{display:inline-block;margin-top:14px;padding:12px 22px;border:var(--rim);border-radius:999px;background:var(--marigold);font-weight:800;box-shadow:2px 2px 0 var(--ink)}
+.done{text-align:center}
+.done .em{font-size:64px}
+.stamp{display:inline-block;margin-top:8px;padding:4px 14px;border:2px dashed var(--ink);border-radius:8px;font-family:var(--font-display),sans-serif;font-weight:800}
+@media (max-width:420px){.pay{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
